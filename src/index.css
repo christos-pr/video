@@ -158,8 +158,18 @@
    */
 
   &--withBorder {
-    ^&__video-picture {
+    ^&__video-element {
       border: 1px solid var(--border-color);
+    }
+
+    &.video-tool--withBackground {
+      .video-tool__video {
+        border: 1px solid var(--border-color);
+      }
+
+      .video-tool__video-element {
+        border: none;
+      }
     }
   }
 

@@ -23,7 +23,6 @@ export default class Ui {
       wrapper: make('div', [this.CSS.baseClass, this.CSS.wrapper]),
       videoContainer: make('div', [ this.CSS.videoContainer ]),
       fileButton: this.createFileButton(),
-      videoTitle: make('span', this.CSS.videoTitle),
       videoElement: undefined,
       videoPreloader: make('div', this.CSS.videoPreloader),
       caption: make('div', [this.CSS.input, this.CSS.caption], {
@@ -66,7 +65,6 @@ export default class Ui {
       wrapper: 'video-tool',
       videoContainer: 'video-tool__video',
       videoPreloader: 'video-tool__video-preloader',
-      videoTitle: 'embed-tool__video-title',
       videoElement: 'video-tool__video-element',
       caption: 'video-tool__caption',
     };
@@ -155,7 +153,7 @@ export default class Ui {
       src: file.url,
       autoplay: false,
       loop: false,
-      muted: false
+      muted: false,
     };
 
     let eventName = 'loadeddata';
@@ -166,7 +164,6 @@ export default class Ui {
      * @type {Element}
      */
     this.nodes.videoElement = make('VIDEO', this.CSS.videoElement, attributes);
-    this.nodes.videoTitle.innerHTML = file.title;
     /**
      * Add load event listener
      */
@@ -181,7 +178,6 @@ export default class Ui {
       }
     });
 
-    this.nodes.videoContainer.appendChild(this.nodes.videoTitle);
     this.nodes.videoContainer.appendChild(this.nodes.videoElement);
   }
 
