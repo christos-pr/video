@@ -89,7 +89,7 @@ export default class Ui {
   /**
    * Renders tool UI
    *
-   * @param {VideoeToolData} toolData - saved tool data
+   * @param {VideoToolData} toolData - saved tool data
    * @returns {Element}
    */
   render(toolData) {
@@ -144,7 +144,7 @@ export default class Ui {
   /**
    * Shows video
    *
-   * @param {Object} file - video source
+   * @param {object} file - video source
    * @returns {void}
    */
   fillVideo(file) {
@@ -156,7 +156,7 @@ export default class Ui {
       muted: false,
     };
 
-    let eventName = 'loadeddata';
+    const eventName = 'loadeddata';
 
     /**
      * Compose tag with defined attributes
